@@ -1,0 +1,13 @@
+<div>
+  <input type="file" (change)="loadImage($event)" accept="image/*"/>
+  <img #loadingImage [src]="imageSrc" (load)="onImageLoad()" *ngIf="imageSrc" style="display: none;"/>
+  <canvas #canvas></canvas>
+  <ul>
+    <li *ngFor="let car of carDetections; let i = index">
+      Car detected at [{{car.bbox[0]}}, {{car.bbox[1]}}], width: {{car.bbox[2]}}, height: {{car.bbox[3]}}
+      <ul *ngIf="licensePlates[i]">
+        <li>License Plate: {{licensePlates[i]}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
