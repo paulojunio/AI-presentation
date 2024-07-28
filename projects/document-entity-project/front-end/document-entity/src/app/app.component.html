@@ -1,0 +1,4 @@
+<div>
+  <input type="file" (change)="loadImage($event)" accept="image/*"/>
+  <img #loadingImage [src]="imageSrc" *ngIf="imageSrc" style="display: none;"/>
+</div>
